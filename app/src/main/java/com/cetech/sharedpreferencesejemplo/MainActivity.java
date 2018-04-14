@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnColorAzul,btnReset,btnContador;
+    Button btnColorAzul,btnColorRojo,btnColorVerde,BtnColorNaranja,btnReset,btnContador;
     TextView Midisplay;
     SharedPreferences preferences;
     String colorDisplay;
@@ -22,6 +22,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         btnColorAzul=findViewById(R.id.btnColorAzul);
         btnColorAzul.setOnClickListener(this);
+
+        btnColorRojo=findViewById(R.id.btnColorRojo);
+        btnColorRojo.setOnClickListener(this);
+
+        btnColorVerde=findViewById(R.id.btnColorVerde);
+        btnColorVerde.setOnClickListener(this);
+
+        BtnColorNaranja=findViewById(R.id.btnColorNaranja);
+        BtnColorNaranja.setOnClickListener(this);
+
+
         btnReset=findViewById(R.id.btnResetear);
         btnReset.setOnClickListener(this);
 
@@ -58,6 +69,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SharedPreferences.Editor insertarAzul=preferences.edit();
                 insertarAzul.putString("color","#49d3f5");
                 insertarAzul.commit();
+
+
+                break;
+            case R.id.btnColorRojo:
+                Midisplay.setBackgroundColor(Color.parseColor("#ef3759"));
+                SharedPreferences.Editor insertarRojo=preferences.edit();
+                insertarRojo.putString("color","#ef3759");
+                insertarRojo.commit();
+
+
+                break;
+
+            case R.id.btnColorVerde:
+                Midisplay.setBackgroundColor(Color.parseColor("#79e44b"));
+                SharedPreferences.Editor insertarVerde=preferences.edit();
+                insertarVerde.putString("color","#79e44b");
+                insertarVerde.commit();
+
+
+                break;
+
+            case R.id.btnColorNaranja:
+                Midisplay.setBackgroundColor(Color.parseColor("#f58b49"));
+                SharedPreferences.Editor insertarNaanja=preferences.edit();
+                insertarNaanja.putString("color","#f58b49");
+                insertarNaanja.commit();
 
 
                 break;
